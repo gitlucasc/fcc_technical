@@ -1,0 +1,46 @@
+#navbar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* navbar width */
+    width: 150px;  
+    background-color: #f0f0f0;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#main-doc {
+    /* margin to navbar */
+    margin-left: 200px;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0;
+    width: 100%;
+    }
+
+    body {
+        margin: 0
+    }    
+
+    #main-doc {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    .nav-link {
+        margin: 1.5rem
+    }
+
+}
