@@ -12,79 +12,144 @@
             <header>
                 <h1>Documentation</h1>
             </header>
-            <a href="#1" class="nav-link">1</a>
-            <a href="#2" class="nav-link">2</a>
-            <a href="#3" class="nav-link">3</a>
-            <a href="#4" class="nav-link">4</a>
-            <a href="#5" class="nav-link">5</a>
+            <a href="#Búsqueda_Lineal" class="nav-link">Búsqueda Lineal</a>
+            <a href="#Búsqueda_Binaria" class="nav-link">Búsqueda Binaria</a>
+            <a href="#Selection_Sort" class="nav-link">Selection Sort</a>
+            <a href="#Insertion_Sort" class="nav-link">Insertion Sort</a>
+            <a href="#Bubble_Sort" class="nav-link">Bubble Sort</a>
         </nav>
     </section>
         <!-- main content -->
         <main id="main-doc"> 
-            <section class="main-section" id="1">
+            <section class="main-section" id="Búsqueda_Lineal">
                 <header>
-                    <h1>1</h1>
+                    <h1>Búsqueda Lineal</h1>
                 </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium corporis, enim nam fuga officiis nihil perspiciatis. Soluta nulla quasi, rem doloremque dolores provident quia perferendis nostrum obcaecati veritatis. Adipisci, omnis!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium corporis, enim nam fuga officiis nihil perspiciatis. Soluta nulla quasi, rem doloremque dolores provident quia perferendis nostrum obcaecati veritatis. Adipisci, omnis!</p>
-                <code>
-                    newArr.append(arr.pop(smallest))
-                </code>       
+                <p>La búsqueda lineal es uno de los algoritmos de búsqueda más sencillos. Consiste en recorrer la lista elemento por elemento, comparando cada valor con el objetivo hasta encontrarlo o llegar al final de la lista.</p>
+                <p>Este método no requiere que la lista esté ordenada y es fácil de implementar, aunque no es muy eficiente en listas muy grandes debido a su complejidad lineal.</p>
+                <p>Ejemplo de una lista desordenada:</p>
                 <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere harum, laboriosam, beatae delectus ea doloremque omnis officiis eligendi, distinctio sunt quae libero perspiciatis tenetur officia magnam quaerat voluptas mollitia iste.</li>
+                    <li>7, 2, 9, 4, 1</li>
                 </ul>          
+<pre>
+<code>def linear_search(arr, target):</code>
+<code>  for index, element in enumerate(arr):</code>
+<code>      if element == target:</code>
+<code>          return index</code>
+<code>  return -1</code>
+
+<code>lista = [7, 2, 9, 4, 1]</code>
+<code>objetivo = 4</code>
+<code>print(f"Encontrado en índice: {linear_search(lista, objetivo)}")</code>   
+</pre>  
             </section>
-            <section class="main-section" id="2">
+            <section class="main-section" id="Búsqueda_Binaria">
                 <header>
-                    <h1>2</h1>
+                    <h1>Búsqueda Binaria</h1>
                 </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil blanditiis amet quidem natus alias neque debitis ipsum itaque ab quo incidunt iste, optio minima! Quod explicabo quasi modi quas deleniti.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil blanditiis amet quidem natus alias neque debitis ipsum itaque ab quo incidunt iste, optio minima! Quod explicabo quasi modi quas deleniti.</p>
-                <code>
-                    newArr.append(arr.pop(smallest))
-                </code>          
+                <p>La búsqueda binaria es un algoritmo más rápido que la búsqueda lineal, pero requiere que la lista esté ordenada previamente. Divide el espacio de búsqueda a la mitad en cada paso, descartando la mitad en la que no puede estar el elemento.</p>
+                <p>Gracias a esta estrategia de división y conquista, su eficiencia es O(log n), lo que la hace ideal para listas grandes y consultas rápidas.</p>
+                <p>Ejemplo de una lista ordenada:</p>
                 <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere harum, laboriosam, beatae delectus ea doloremque omnis officiis eligendi, distinctio sunt quae libero perspiciatis tenetur officia magnam quaerat voluptas mollitia iste.</li>
-                </ul>         
+                    <li>1, 2, 4, 7, 9</li>
+                </ul>    
+                <pre>     
+                <code>
+<code>def binary_search(lista, item):</code>
+<code>  low = 0  # inicio del array</code>
+<code>  high = len(lista)-1 #final del array</code>
+<code></code>
+<code>  while low <= high: # mientras queden elementos en el array</code>
+<code>        mid = (low + high) // 2 # mitad entre el rango</code>
+<code>        guess = lista[mid] </code>
+<code>        </code>
+<code>        if guess < item:  </code>
+<code>                low = mid - 1   # low se actualiza con el valor de mid-1</code>
+<code>                print(mid)</code>
+<code>        elif guess > item:</code>
+<code>                high = mid - 1</code>
+<code>                print(mid)</code>
+<code>        else:</code>
+<code>                return print(f"Encontrado en el indice {mid}")</code>
+<code>return None;</code>
+                </code>
+                </pre>          
             </section>
-            <section class="main-section" id="3">
+            <section class="main-section" id="Selection_Sort">
                 <header>
-                    <h1>3</h1>
+                    <h1>Selection Sort</h1>
                 </header>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quam temporibus praesentium ipsam earum voluptas pariatur explicabo iste quae ratione. Dignissimos, nulla perferendis iusto dolor nisi quasi porro praesentium! Voluptatum.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quam temporibus praesentium ipsam earum voluptas pariatur explicabo iste quae ratione. Dignissimos, nulla perferendis iusto dolor nisi quasi porro praesentium! Voluptatum.</p>
-                <code>
-                    newArr.append(arr.pop(smallest))
-                </code>       
+                <p>Selection Sort es un método simple de ordenación que selecciona el elemento más pequeño de la lista y lo intercambia con el primer elemento desordenado. Este proceso se repite hasta que la lista esté completamente ordenada.</p>
+                <p>Aunque su complejidad es O(n²), su implementación es intuitiva y su comportamiento es predecible, lo que lo hace útil en contextos educativos o con listas pequeñas.</p>
+                <p>Ejemplo de una lista desordenada:</p>
                 <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere harum, laboriosam, beatae delectus ea doloremque omnis officiis eligendi, distinctio sunt quae libero perspiciatis tenetur officia magnam quaerat voluptas mollitia iste.</li>
+                    <li>9, 1, 6, 3, 7</li>
+                </ul>  
+                <pre>          
+<code>def findSmallest(arr):</code>
+<code>  smallest = arr[0]</code>
+<code>  smallest_index = 0</code>
+<code>  for i in range(1, len(arr)):</code>
+<code>          if arr[i] < smallest:</code>
+<code>                  smallest = arr[i]</code>
+<code>                  smallest_index = i</code>
+<code>  return smallest_index</code>
+<code>  </code>
+<code>def selectionSort(arr):</code>
+<code>  newArr = []</code>
+<code>  for i in range(len(arr)):</code>
+<code>          smallest = findSmallest(arr)</code>
+<code>          newArr.append(arr.pop(smallest))</code>
+<code>  return newArr</code> 
+                </pre>   
+            </section>
+            <section class="main-section" id="Insertion_Sort">
+                <header>
+                    <h1>Insertion Sort</h1>
+                </header>
+                <p>Insertion Sort construye la lista ordenada de manera progresiva, insertando cada nuevo elemento en su posición correcta respecto a los elementos ya ordenados. Es especialmente eficiente para listas pequeñas o listas que ya están parcialmente ordenadas.</p>
+                <p>Este algoritmo también tiene complejidad O(n²) en el peor caso, pero su ventaja es que mantiene el orden de los elementos iguales (estable).</p>
+                <p>Ejemplo de lista desordenada: </p>
+                <ul>
+                    <li>5, 3, 8, 6, 2</li>
                 </ul>            
+<pre>
+<code>def insertion_sort(arr):</code>
+<code>    for i in range(1, len(arr)):</code>
+<code>        key = arr[i]</code>
+<code>        j = i - 1</code>
+<code>        while j >= 0 and key < arr[j]:</code>
+<code>            arr[j + 1] = arr[j]</code>
+<code>            j -= 1</code>
+<code>        arr[j + 1] = key</code>
+<code>    return arr</code>
+<code></code>
+<code>lista = [5, 3, 8, 6, 2]</code>
+<code>print(f"Lista ordenada: {insertion_sort(lista)}")</code>
+</pre>    
             </section>
-            <section class="main-section" id="4">
+            <section class="main-section" id="Bubble_Sort">
                 <header>
-                    <h1>4</h1>
+                    <h1>Bubble Sort</h1>
                 </header>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptas illum laboriosam harum, accusantium veritatis sed odit, corporis quibusdam provident minus! Modi alias impedit natus reprehenderit distinctio ipsa earum quibusdam!</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptas illum laboriosam harum, accusantium veritatis sed odit, corporis quibusdam provident minus! Modi alias impedit natus reprehenderit distinctio ipsa earum quibusdam!</p>
-                <code>
-                    newArr.append(arr.pop(smallest))
-                </code>       
+                <p>Bubble Sort es uno de los algoritmos de ordenación más conocidos y sencillos. Funciona comparando pares de elementos adyacentes e intercambiándolos si están en el orden incorrecto. El proceso se repite hasta que la lista está ordenada.</p>
+                <p>Aunque su eficiencia O(n²) lo hace poco práctico para listas grandes, su claridad conceptual lo convierte en una herramienta educativa muy útil.</p>
+                <p>Ejemplo de lista desordenada:</p>
                 <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere harum, laboriosam, beatae delectus ea doloremque omnis officiis eligendi, distinctio sunt quae libero perspiciatis tenetur officia magnam quaerat voluptas mollitia iste.</li>
-                </ul>            
-            </section>
-            <section class="main-section" id="5">
-                <header>
-                    <h1>5</h1>
-                </header>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolor numquam error possimus fugiat ipsam, provident unde rerum distinctio! Necessitatibus nemo quia quos iusto, eveniet ut aliquam maxime eos mollitia?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolor numquam error possimus fugiat ipsam, provident unde rerum distinctio! Necessitatibus nemo quia quos iusto, eveniet ut aliquam maxime eos mollitia?</p>
-                <code>
-                    newArr.append(arr.pop(smallest))
-                </code>          
-                <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere harum, laboriosam, beatae delectus ea doloremque omnis officiis eligendi, distinctio sunt quae libero perspiciatis tenetur officia magnam quaerat voluptas mollitia iste.</li>
+                    <li>4, 2, 7, 1, 5</li>
                 </ul>         
+<pre>
+<code>def bubble_sort(arr):</code>
+<code>    n = len(arr)</code>
+<code>    for i in range(n):</code>
+<code>        for j in range(0, n-i-1):</code>
+<code>            if arr[j] > arr[j+1]:</code>
+<code>                arr[j], arr[j+1] = arr[j+1], arr[j]</code>
+<code>    return arr</code>
+<code></code>
+<code>lista = [4, 2, 7, 1, 5]</code>
+<code>print(f"Lista ordenada: {bubble_sort(lista)}")</code>
+</pre>      
             </section>
         </main>
 
